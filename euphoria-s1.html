@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru"><head><script>window.__V0_SANDBOX_ID__="sb-2epgq99525y0";window.__V0_CHAT_ID__="dO6AcdSJSpZ";window.__V0_SOURCE_MAP_FRAME_ROOT__="file:///vercel/share/v0-project/.next/dev/static";;(function ul(e){let t=Symbol.for("__next_dev_bridge_runtime_observer__"),r=window[t],n=e||{},i=n.messageType||"next-dev-bridge:runtime",a=n.readyMessageType||"next-dev-bridge:runtime-ready",s=n.resetMessageType||"next-dev-bridge:runtime-reset",o=n.targetOrigin||"*",u=!1!==n.isAppDirectory,l="string"==typeof n.sourceMapEndpoint&&n.sourceMapEndpoint?n.sourceMapEndpoint:"",c="string"==typeof n.sourceMapFrameRoot&&n.sourceMapFrameRoot?n.sourceMapFrameRoot.replace(/\/+$/,""):"";if(r)return void f(a,{existing:!0,href:window.location.href,windowId:r.windowId});let d=1,p=`${Date.now()}-${Math.random().toString(36).slice(2)}`,h={errors:[]};function f(e,t){window.parent!==window&&window.parent.postMessage({type:e,...t},o)}async function m(e){let t={...e,id:d++,severity:"recoverable",at:new Date().toISOString()};h.errors=[...h.errors,t],f(i,{event:{type:"runtime:error",error:t,errors:h.errors},state:h,href:window.location.href,windowId:p}),l&&w(t).then(e=>{h.errors.some(e=>e.id===t.id)&&(t.mapped=e,h.errors=h.errors.map(e=>e.id===t.id?t:e),f(i,{event:{type:"runtime:error",error:t,errors:h.errors},state:h,href:window.location.href,windowId:p}))}).catch(()=>{})}function g(){0!==h.errors.length&&(h.errors=[],f(i,{event:{type:"runtime:cleared",errors:[]},state:h,href:window.location.href,windowId:p}))}function v(e){var t,r,n,i,a;let s,o,u,l;m((s=_((t=e).error,t.message||"Uncaught error"),o=t.filename||void 0,u=U(t.lineno),l=U(t.colno),{source:"error",name:s.name,message:s.message,stack:s.stack||(r=s.message,n=o,i=u,a=l,n&&i&&a?`${r}
+    at <anonymous> (${n}:${i}:${a})`:""),filename:o,line:u,column:l}))}function y(e){let t;m({source:"unhandledrejection",name:(t=_(e.reason,"Unhandled promise rejection")).name,message:t.message,stack:t.stack})}function b(e){let t=e.data;t&&"object"==typeof t&&t.type===s&&g()}function _(e,t){return e instanceof Error?{name:e.name||"Error",message:e.message||t,stack:e.stack||""}:e&&"object"==typeof e?{name:"string"==typeof e.name?e.name:"Error",message:"string"==typeof e.message?e.message:function(e){try{return JSON.stringify(e)}catch{return""}}(e)||t,stack:"string"==typeof e.stack?e.stack:""}:{name:"Error",message:"string"==typeof e?e:null==e?t:String(e),stack:""}}async function w(e){var t,r;let n=(t=String(e.stack).split("\n").map(j).filter(Boolean),r=e.filename,t.map(e=>({...e,file:function(e,t){var r,n;if("string"!=typeof e||0===e.length)return;let i=A(e);if(i)return O(i);if(r=e,/^[a-zA-Z][a-zA-Z\d+.-]*:/.test(r))return e;if(t&&N(t)===N(e)){let e=A(t);return e?O(e):t}let a=e.startsWith("_next/")?`/${e}`:e;return a.startsWith("/_next/")?O(a):!(n=a).includes("/")&&n.endsWith(".js")&&(n.startsWith("_")||n.includes("._.")||n.startsWith("node_modules_")||n.startsWith("turbopack-"))?O(`/_next/static/chunks/${a}`):e}(e.file,r)})));return{message:e.message,stack:e.stack,frames:n,mappedFrames:n.length>0?await x(n):[]}}async function x(e){let t=function(e){let t=[],r=new Set;for(let n of(k(t,r,e),[R,I,P])){let i=function(e,t){let r=!1,n=e.map(e=>{if("string"!=typeof e.file)return e;let n=t(e.file);return n&&n!==e.file?(r=!0,{...e,file:n}):e});return r?n:null}(e,n);i&&k(t,r,i)}return t}(e),r=null;for(let n of t){let t=await E(n);if(function(e){for(let n of e){var t,r;let e=D(t=n)&&"fulfilled"===t.status&&D(t.value)&&D(t.value.originalStackFrame)?t.value.originalStackFrame:null;if(!e||!0===e.ignored)continue;let i="string"!=typeof(r=e.file)?"":r.trim();if(!(!i||function(e){let t=C(e);return/\/(?:_next\/static|\.next\/dev\/static)\/chunks\//.test(t)||t.includes("/next/dist/compiled/")}(i)))return!0}return!1}(t.mappedFrames))return S(e,t.mappedFrames);if(r=t.mappedFrames,!t.shouldTryNextVariant)break}return r??$(e,"No stack frames to map.")}async function E(e){try{let t=function(e){try{return new URL(e,window.location.href).origin!==window.location.origin}catch{return!1}}(l),r={body:JSON.stringify({frames:e,isServer:!1,isEdgeServer:!1,isAppDirectory:u,sourceOrigin:window.location.origin}),cache:"no-store",credentials:t?"omit":"same-origin",method:"POST",mode:t?"cors":"same-origin"};t||(r.headers={"content-type":"application/json"});let n=await fetch(l,{...r});if(!n.ok||204===n.status){let t=await n.text().catch(()=>"");return{mappedFrames:$(e,t||"No original stack frame response from Next dev server."),shouldTryNextVariant:!1}}let i=await n.json();if(!Array.isArray(i))return{mappedFrames:$(e,"Invalid original stack frame response from Next dev server."),shouldTryNextVariant:!1};return{mappedFrames:S(e,i),shouldTryNextVariant:!0}}catch(t){return{mappedFrames:$(e,t instanceof Error?t.message:String(t)),shouldTryNextVariant:!1}}}function S(e,t){return e.map((e,r)=>t[r]||{status:"rejected",reason:"No original stack frame response for frame."})}function $(e,t){return e.map(()=>({status:"rejected",reason:t}))}function k(e,t,r){let n=JSON.stringify(r.map(e=>e.file));t.has(n)||(t.add(n),e.push(r))}function O(e){return c?`${c}/${e.replace(/^\/_next\/static\/?/,"")}`:e}function R(e){let t=T(e);return t?`.next/dev/static/${t.replace(/^\/_next\/static\/?/,"")}`:null}function I(e){let t=T(e);return t?t.replace(/^\/+/,""):null}function P(e){let t=T(e);if(!t)return null;try{return new URL(t,window.location.origin).href}catch{return null}}function T(e){var t,r;let n,i=C(e);if(i.startsWith("/_next/static/"))return i;let a=(r="/.next/dev/static/",-1===(n=(t=i).indexOf(r))?"":t.slice(n+r.length));return a?`/_next/static/${a}`:""}function A(e){if(e.startsWith("/_next/"))return e;if(e.startsWith("_next/"))return`/${e}`;try{let t=new URL(e);return t.pathname.startsWith("/_next/")?t.pathname:""}catch{return""}}function C(e){try{return new URL(e).pathname}catch{}return e.startsWith("/")?e:`/${e}`}function N(e){return e.split("?")[0].split(/[\\/]/).pop()||e}function D(e){return"object"==typeof e&&null!==e}function j(e){let t=e.trim();if(!t.startsWith("at "))return null;let r=t.slice(3),n="<anonymous>",i=r,a=r.indexOf("("),s=r.endsWith(")")?r.length-1:-1;-1!==a&&-1!==s&&s>a&&(n=r.slice(0,a).trim()||"<anonymous>",i=r.slice(a+1,s));let o=/^(.*):(\d+):(\d+)$/.exec(i);return o?{file:o[1],methodName:n,arguments:[],line1:Number(o[2]),column1:Number(o[3])}:null}function U(e){return"number"==typeof e&&Number.isFinite(e)&&e>0?e:void 0}window.addEventListener("error",v),window.addEventListener("unhandledrejection",y),window.addEventListener("message",b),window[t]={windowId:p,getSnapshot:()=>({errors:h.errors.slice()}),reset:g,stop:function(){window.removeEventListener("error",v),window.removeEventListener("unhandledrejection",y),window.removeEventListener("message",b),delete window[t]}},f(a,{existing:!1,href:window.location.href,windowId:p})})({"messageType":"next-dev-bridge:event","sourceMapEndpoint":"/_v0/next-dev-bridge-stack-frames","sourceMapFrameRoot":"file:///vercel/share/v0-project/.next/dev/static"});</script><script async="" src="/v0-runtime-dist.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Эйфория | Сезон 1 | 1080p | ReadHead Sund</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Raleway:wght@300;400;500;600;700;800;900&amp;family=Spectral:wght@200;400;700&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0612; --bg2: #140a1f; --bg3: #1d1029; --bg4: #2a1840;
+  --pink: #7c3aed; --pink2: #6d28d9; --pink3: #c4b5fd;
+  --pinkglow: rgba(139,92,246,0.45);
+  --green: #db2777; --green2: #be185d; --green3: #f9a8d4;
+  --greenglow: rgba(236,72,153,0.4);
+  --text: #ede9fe; --text2: #a99bc7; --text3: #6b5b8a;
+  --border: rgba(196,181,253,0.1); --border-pink: rgba(139,92,246,0.3);
+}
+body {
+  background: var(--bg); color: var(--text);
+  font-family: 'Raleway', sans-serif; font-weight: 600; min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(124,58,237,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(219,39,119,0.15) 0%, transparent 50%);
+}
+#admin-modal { display:none; position:fixed; inset:0; background:rgba(10,6,18,0.92); z-index:9999; align-items:center; justify-content:center; }
+#admin-modal.open { display:flex; }
+.modal-box { background:var(--bg2); border:1px solid var(--border-pink); border-radius:6px; padding:2.5rem; width:420px; max-width:90vw; box-shadow:0 0 40px rgba(139,92,246,0.25); }
+.modal-box h2 { font-family:'Bebas Neue',serif; font-size:2rem; letter-spacing:0.15em; color:var(--pink3); margin-bottom:0.25rem; text-shadow:0 0 20px var(--pinkglow); }
+.modal-box p { font-size:0.8rem; color:var(--text2); margin-bottom:1.5rem; }
+.modal-input { width:100%; padding:10px 14px; background:var(--bg3); border:1px solid var(--border); border-radius:4px; color:var(--text); font-family:'Raleway',sans-serif; font-size:0.9rem; margin-bottom:1rem; outline:none; transition:border-color 0.2s; }
+.modal-input:focus { border-color:var(--pink3); }
+.modal-error { font-size:0.78rem; color:#f87171; margin-bottom:0.75rem; display:none; }
+.modal-error.show { display:block; }
+header { background:linear-gradient(180deg,rgba(10,6,18,0.98) 0%,rgba(10,6,18,0.75) 100%); padding:0 4%; position:sticky; top:0; z-index:100; border-bottom:1px solid var(--border-pink); }
+.header-inner { max-width:1400px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:68px; }
+.logo { display:flex; align-items:center; gap:1rem; }
+.logo img.brand-logo { height:34px; width:auto; filter:drop-shadow(0 0 10px var(--pinkglow)); }
+.logo-sep { width:1px; height:28px; background:var(--border-pink); }
+.logo-sub { font-size:0.62rem; color:var(--text2); letter-spacing:0.18em; text-transform:uppercase; line-height:1.6; font-weight:500; }
+.header-right { display:flex; align-items:center; gap:0.75rem; }
+.admin-pill { background:var(--pink); color:#fff; font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border-radius:3px; cursor:pointer; border:none; font-family:'Raleway',sans-serif; transition:background 0.2s; }
+.admin-pill:hover { background:var(--pink2); }
+.admin-pill.active { background:#1a1500; color:var(--text2); }
+.hero-banner { position:relative; overflow:hidden; min-height:620px; display:flex; flex-direction:column; justify-content:flex-end; }
+.hero-bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 25%; filter:saturate(1.1) brightness(1); }
+.hero-overlay-top { position:absolute; top:0; left:0; right:0; height:120px; background:none; z-index:1; }
+.hero-overlay-bottom { position:absolute; bottom:0; left:0; right:0; height:85%; background:linear-gradient(0deg,rgba(10,6,18,0.98) 0%,rgba(10,6,18,0.85) 30%,rgba(10,6,18,0.5) 55%,transparent 85%); z-index:1; }
+.hero-title-shade { position:absolute; left:0; bottom:0; width:65%; height:70%; background:radial-gradient(ellipse at left bottom, rgba(10,6,18,0.85) 0%, rgba(10,6,18,0.5) 40%, transparent 75%); z-index:1; pointer-events:none; }
+.hero-overlay-sides { position:absolute; inset:0; background:none; z-index:1; }
+.hero-content { position:relative; z-index:2; padding:2.5rem 4% 3rem; max-width:1400px; margin:0 auto; width:100%; }
+.hero-eyebrow { font-size:0.68rem; letter-spacing:0.35em; color:var(--green3); text-transform:uppercase; margin-bottom:1rem; font-weight:700; text-shadow:0 0 12px var(--greenglow); }
+    .hero-title { font-family:'Raleway',sans-serif; font-size:clamp(3rem,7.5vw,5.8rem); font-weight:800; letter-spacing:0.1em; line-height:1.05; text-transform:uppercase; margin-bottom:0.4rem; padding-top:0.12em; background:linear-gradient(to bottom,#ede9fe 0%,#c4b5fd 50%,#7c3aed 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; filter:drop-shadow(0 0 18px rgba(139,92,246,0.35)); }
+.hero-subtitle { font-family:'Spectral',serif; font-size:clamp(1.1rem,2.6vw,1.9rem); font-weight:200; letter-spacing:0.45em; line-height:1.1; text-transform:uppercase; color:var(--green3); opacity:0.9; padding-left:0.25rem; margin-bottom:1.25rem; }
+.hero-meta { display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center; margin-bottom:1.5rem; }
+.badge { padding:4px 12px; border-radius:2px; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:800; }
+.badge-pink { background:var(--pink); color:#fff; }
+.badge-green { background:var(--green); color:#fff; }
+.badge-outline { background:transparent; border:1px solid var(--border-pink); color:var(--pink3); }
+.badge-gray { background:rgba(42,24,64,0.6); border:1px solid var(--border-pink); color:var(--text2); backdrop-filter:blur(4px); }
+.hero-desc { font-size:0.88rem; color:rgba(237,233,254,0.85); max-width:560px; line-height:1.65; font-weight:500; }
+#ep-count-badge { color:var(--pink3); }
+.container { max-width:1400px; margin:0 auto; padding:2rem 4%; }
+#player-section { background:#000; border-radius:6px; overflow:hidden; margin-bottom:2.5rem; border:1px solid var(--border); box-shadow:0 8px 40px rgba(0,0,0,0.7),0 0 0 1px var(--border-pink); }
+#player-header { background:linear-gradient(90deg,var(--bg2),var(--bg3)); padding:0.875rem 1.5rem; border-bottom:1px solid var(--border-pink); display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+#now-playing { font-family:'Bebas Neue',serif; font-size:1.2rem; letter-spacing:0.1em; color:var(--pink3); }
+#player-container { background:#000; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; position:relative; }
+#main-video { width:100%; height:100%; display:none; }
+#player-placeholder { text-align:center; padding:4rem; }
+#player-placeholder .big-icon { width:80px; height:80px; border-radius:50%; border:2px solid var(--border-pink); display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; font-size:2rem; color:var(--pink3); }
+#player-placeholder p { color:var(--text3); font-size:0.85rem; }
+.btn { padding:7px 16px; border-radius:3px; font-family:'Raleway',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; border:1px solid var(--border); background:var(--bg3); color:var(--text); transition:all 0.18s; }
+.btn:hover { background:var(--bg4); border-color:var(--text3); }
+.btn.primary { background:var(--pink); color:#fff; border-color:var(--pink); }
+.btn.primary:hover { background:var(--pink2); border-color:var(--pink2); }
+.btn.danger { border-color:var(--border-pink); color:var(--pink3); background:transparent; }
+.btn.danger:hover { background:rgba(139,92,246,0.1); }
+.btn-nav { background:rgba(139,92,246,0.15); border:1px solid var(--border-pink); color:var(--text); padding:6px 14px; border-radius:3px; font-size:0.75rem; font-weight:600; letter-spacing:0.05em; cursor:pointer; font-family:'Raleway',sans-serif; transition:all 0.18s; }
+.btn-nav:hover { background:rgba(139,92,246,0.3); }
+.section-title { font-family:'Bebas Neue',serif; font-size:1.6rem; letter-spacing:0.15em; color:var(--text); margin-bottom:1.25rem; font-weight:400; display:flex; align-items:center; gap:0.75rem; text-transform:uppercase; }
+.section-title .red-bar { width:4px; height:26px; background:var(--pink); border-radius:2px; box-shadow:0 0 10px var(--pinkglow); }
+.section-title .line { flex:1; height:1px; background:var(--border); margin-left:0.5rem; }
+.episodes-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.75rem; margin-bottom:2.5rem; }
+.episode-card { background:var(--bg2); border:1px solid var(--border); border-radius:4px; overflow:hidden; cursor:pointer; transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s; position:relative; }
+.episode-card:hover { transform:scale(1.04); border-color:var(--border-pink); box-shadow:0 8px 30px rgba(0,0,0,0.6),0 0 0 1px var(--pinkglow); z-index:2; }
+.episode-card.active { border-color:var(--pink3); box-shadow:0 0 0 2px var(--pinkglow); }
+.episode-card.active::after { content:'▶ ИДЁТ'; position:absolute; top:8px; right:8px; background:var(--pink); color:#fff; font-size:0.58rem; font-weight:700; letter-spacing:0.1em; padding:3px 7px; border-radius:2px; font-family:'Raleway',sans-serif; }
+.ep-thumb { aspect-ratio:16/9; background:linear-gradient(135deg,#1d1029,#2a1840); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.ep-thumb::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%,rgba(10,6,18,0.7) 100%); }
+.ep-number-bg { font-family:'Bebas Neue',serif; font-size:3.5rem; font-weight:400; color:rgba(196,181,253,0.12); letter-spacing:-0.02em; user-select:none; }
+.play-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(10,6,18,0.5); opacity:0; transition:opacity 0.2s; z-index:2; }
+.episode-card:hover .play-overlay { opacity:1; }
+.play-overlay-icon { width:44px; height:44px; background:var(--pink); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; padding-left:4px; box-shadow:0 0 25px var(--pinkglow); }
+.ep-info { padding:0.75rem; }
+.ep-num { font-size:0.65rem; color:var(--pink3); letter-spacing:0.12em; text-transform:uppercase; font-weight:700; margin-bottom:2px; }
+.ep-title { font-size:0.84rem; color:var(--text); font-weight:700; line-height:1.3; }
+.ep-status { margin-top:5px; font-size:0.68rem; }
+.ep-status.uploaded { color:var(--pink3); }
+.ep-status.empty { color:var(--text3); }
+.admin-only { display:none; }
+body.admin-mode .admin-only { display:block; }
+body.admin-mode .ep-upload-btn { display:block; }
+.ep-upload-btn { display:none; margin-top:7px; width:100%; padding:5px; background:transparent; border:1px dashed var(--border-pink); border-radius:3px; color:var(--text3); font-size:0.68rem; cursor:pointer; font-family:'Raleway',sans-serif; font-weight:500; letter-spacing:0.05em; transition:all 0.18s; }
+.ep-upload-btn:hover { border-color:var(--pink3); color:var(--pink3); background:rgba(139,92,246,0.06); }
+#admin-panel { background:var(--bg2); border:1px solid var(--border-pink); border-radius:6px; padding:1.5rem; margin-bottom:2rem; display:none; box-shadow:0 0 20px rgba(139,92,246,0.12); }
+body.admin-mode #admin-panel { display:block; }
+.admin-section-label { font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--pink3); font-weight:700; margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--border-pink); }
+.admin-row { display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center; margin-bottom:0.75rem; }
+.admin-row:last-of-type { margin-bottom:0; }
+.shared-info { background:rgba(139,92,246,0.08); border:1px solid var(--border-pink); border-radius:4px; padding:0.75rem 1rem; margin-bottom:1rem; font-size:0.75rem; color:var(--text2); line-height:1.6; }
+.shared-info strong { color:var(--pink3); }
+.url-input { flex:1; padding:8px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:3px; color:var(--text); font-family:'Raleway',sans-serif; font-size:0.82rem; outline:none; transition:border-color 0.2s; min-width:200px; }
+.url-input:focus { border-color:var(--pink3); }
+select { padding:8px 12px; background:var(--bg3); border:1px solid var(--border); border-radius:3px; color:var(--text); font-family:'Raleway',sans-serif; font-size:0.82rem; cursor:pointer; outline:none; }
+.storage-wrap { margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--border); }
+.storage-label { display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text3); margin-bottom:5px; }
+.storage-bar { height:3px; background:var(--bg4); border-radius:2px; overflow:hidden; }
+.storage-fill { height:100%; background:var(--pink3); border-radius:2px; transition:width 0.5s; width:0%; }
+.upload-progress { display:none; margin-top:0.75rem; font-size:0.78rem; color:var(--text2); }
+.progress-bar { height:2px; background:var(--bg4); border-radius:2px; margin-top:5px; overflow:hidden; }
+.progress-fill { height:100%; background:var(--pink3); width:0%; transition:width 0.2s; }
+.share-box { background:var(--bg2); border:1px solid var(--border); border-radius:6px; padding:1.25rem 1.5rem; margin-bottom:2rem; }
+.share-box h3 { font-family:'Bebas Neue',serif; font-size:1.1rem; letter-spacing:0.15em; color:var(--text2); margin-bottom:0.75rem; text-transform:uppercase; }
+.share-url { display:flex; gap:0.5rem; }
+.share-url input { flex:1; padding:7px 12px; background:var(--bg); border:1px solid var(--border); border-radius:3px; color:var(--text3); font-size:0.78rem; font-family:monospace; outline:none; }
+.share-note { font-size:0.72rem; color:var(--text3); margin-top:0.5rem; line-height:1.5; }
+#toast { position:fixed; bottom:2rem; right:2rem; background:var(--bg3); border:1px solid var(--border); border-left:3px solid var(--pink3); border-radius:4px; padding:0.75rem 1.25rem; font-size:0.82rem; color:var(--text); transform:translateY(80px); opacity:0; transition:all 0.28s cubic-bezier(0.34,1.56,0.64,1); z-index:9998; max-width:300px; }
+#toast.show { transform:translateY(0); opacity:1; }
+#toast.success { border-left-color:var(--pink3); color:var(--pink3); }
+#toast.error { border-left-color:#f87171; color:#f87171; }
+footer { border-top:1px solid var(--border); padding:1.5rem 4%; text-align:center; font-size:0.7rem; color:var(--text3); letter-spacing:0.1em; text-transform:uppercase; display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
+input[type="file"] { display:none; }
+@media (max-width:600px) { .container { padding:1rem; } .episodes-grid { grid-template-columns:1fr 1fr; } header { padding:0 1rem; } }
+</style>
+<script src="/v0-vm-assets/freeze-dry.umd.js" async=""></script></head>
+<body class="">
+
+<div id="admin-modal" class="">
+  <div class="modal-box">
+    <h2>Вход Админа</h2>
+    <p>Только администратор может загружать и редактировать серии</p>
+    <input type="password" class="modal-input" id="pwd-input" placeholder="Введите пароль" onkeydown="if(event.key==='Enter')checkPwd()">
+    <div class="modal-error" id="pwd-error">Неверный пароль. Попробуйте снова.</div>
+    <div style="display:flex;gap:0.5rem;">
+      <button class="btn primary" onclick="checkPwd()" style="flex:1;">Войти</button>
+      <button class="btn" onclick="closeAdminModal()">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <img class="brand-logo" src="data:text/plain;base64,VGhlIHBhZ2UgY291bGQgbm90IGJlIGZvdW5kCgpOT1RfRk9VTkQKCmZyYTE6OnFjNWRoLTE3ODExMDc4NDk0MTEtNmUyNWIwN2E5ZThiCg==" alt="Эйфория">
+      <div class="logo-sep"></div>
+      <div class="logo-sub">Видеоархив<br>Сезон 1 · 2019</div>
+    </div>
+    <div class="header-right">
+      <span id="admin-status-label" style="font-size: 0.7rem; color: var(--text3); letter-spacing: 0.05em; display: none;">Режим администратора</span>
+    </div>
+  </div>
+</header>
+
+<div class="hero-banner">
+  <img class="hero-bg-img" src="data:text/plain;base64,VGhlIHBhZ2UgY291bGQgbm90IGJlIGZvdW5kCgpOT1RfRk9VTkQKCmZyYTE6Ondmd3JoLTE3ODExMDc4NDk0MDktMDBkOTFhYjJkNDQ5Cg==" alt="Эйфор��я">
+  <div class="hero-overlay-top"></div>
+  <div class="hero-overlay-sides"></div>
+  <div class="hero-overlay-bottom"></div>
+  <div class="hero-title-shade"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">▮ Сезон 1 · Полный · 2019</div>
+    <h1 class="hero-title">ЭЙФОРИЯ</h1>
+    <div class="hero-subtitle">Euphoria</div>
+    <div class="hero-meta">
+      <span class="badge badge-pink">1080p</span>
+      <span class="badge badge-green">TV Shows</span>
+      <span class="badge badge-outline">1 Сезон</span>
+      <span class="badge badge-gray">2019</span>
+      <span class="badge badge-gray" id="ep-count-badge">8 / 8 серий</span>
+    </div>
+    <div class="hero-desc">17-летняя Ру возвращается домой из реабилитационного центра, не имея ни малейшего желания оставаться трезвой. Вместе с группой старшеклассников она проходит через мир наркотиков, любви, травм, дружбы и социальных сетей, пытаясь найти надежду и смысл в хаосе взросления. Восемь эпизодов первого сезона драмы в качестве 1080p с профессиональным дубляжом.</div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="player-section">
+    <div id="player-header">
+      <div id="now-playing">— Выберите серию —</div>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <button class="btn-nav" onclick="changeEp(-1)">◀ Пред.</button>
+        <button class="btn-nav" onclick="changeEp(1)">След. ▶</button>
+      </div>
+    </div>
+    <div id="player-container">
+      <video id="main-video" controls="" preload="metadata" src="" style="display:none;"></video>
+      <div id="player-placeholder" style="display:flex;flex-direction:column;align-items:center;">
+        <div class="big-icon">▶</div>
+        <p>Выберите серию ниже для просмотра</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <div class="red-bar"></div>
+    Серии сезона
+    <div class="line"></div>
+  </div>
+  <div class="episodes-grid" id="episodes-grid"><div class="episode-card" id="card-1">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">01</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E01</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">Пилот</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div><div class="episode-card" id="card-2">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">02</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E02</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">Весь в папочку</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div><div class="episode-card" id="card-3">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">03</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E03</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">Ты выглядишь</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div><div class="episode-card" id="card-4">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">04</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E04</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">Потрясённые</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div><div class="episode-card" id="card-5">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">05</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E05</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">Бонни и Клайд</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div><div class="episode-card" id="card-6">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">06</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E06</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">Следующая серия</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div><div class="episode-card" id="card-7">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">07</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E07</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">Проблемы и трудности похода в туалет во время депрессии</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div><div class="episode-card" id="card-8">
+      <div class="ep-thumb">
+        <div class="ep-number-bg">08</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E08</span><span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>
+        </div>
+        <div class="ep-title">И засей землю солью</div>
+        <div class="ep-status uploaded">● Доступно для просмотра</div>
+        
+      </div></div></div>
+
+  <div id="admin-panel">
+    <div class="admin-section-label">⚙ Панель администратора</div>
+    <div class="shared-info">
+      <strong>🌐 Общий доступ через URL:</strong> вставьте прямую ссылку на видео (mp4, m3u8) — она сохранится в коде страницы и будет видна <strong>всем</strong> посетителям. Для этого нажмите «Сохранить URL», затем скачайте обновлённый файл и замените страницу на сервере.<br><br>
+      <strong>💾 Локальный файл:</strong> загрузка файла с компьютера работает только в вашем браузере — другие посетители его не увидят.
+    </div>
+    <div class="admin-row">
+      <select id="ep-select"><option value="">— Серия —</option><option value="1">E01 — Пилот</option><option value="2">E02 — Весь в папочку</option><option value="3">E03 — Ты выглядишь</option><option value="4">E04 — Потрясённые</option><option value="5">E05 — Бонни и Клайд</option><option value="6">E06 — Следующая серия</option><option value="7">E07 — Проблемы и трудности похода в туалет во время депрессии</option><option value="8">E08 — И засей землю солью</option></select>
+      <input type="text" class="url-input" id="url-input" placeholder="Прямая ссылка на видео (mp4, m3u8...) — для всех посетителей">
+      <button class="btn primary" onclick="saveUrl()">Сохранить URL</button>
+    </div>
+    <div class="admin-row">
+      <button class="btn danger" onclick="clearAll()">✕ Очистить всё</button>
+      <button class="btn" onclick="exportLinks()">↓ Экспорт ссылок .txt</button>
+      <button class="btn danger" onclick="changePassword()">🔑 Сменить пароль</button>
+    </div>
+    <div class="upload-progress" id="upload-progress">
+      <span id="upload-label">Загрузка...</span>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+    <div class="storage-wrap">
+      <div class="storage-label">
+        <span>Хранилище (IndexedDB)</span>
+        <span id="storage-size">0.0 МБ / ~76.8 ГБ</span>
+      </div>
+      <div class="storage-bar"><div class="storage-fill" id="storage-fill" style="width: 0%;"></div></div>
+    </div>
+  </div>
+
+  <div class="share-box">
+    <h3>Поделиться</h3>
+    <div class="share-url">
+      <input type="text" id="share-link" readonly="">
+      <button class="btn primary" onclick="copyLink()">Копировать</button>
+      <button class="btn" onclick="exportPageWithUrls()" style="background:var(--pink2);color:#fff;border-color:var(--pink2);white-space:nowrap;">↓ Скачать страницу</button>
+    </div>
+    <p class="share-note">Поделитесь ссылкой на эту страницу. Видео, загруженные через URL, будут доступны всем посетителям автоматически.</p>
+  </div>
+
+
+<div id="toast" class="">Вы вышли из режима администратора</div>
+<input type="file" id="file-input" accept="video/*">
+
+<footer>
+      <div style="margin-bottom:0.75rem;">Эйфория · Сезон 1 · 2019 · 1080p · TV Shows</div>
+  <button class="admin-pill" id="admin-btn" onclick="toggleAdmin()" style="opacity:0.45;font-size:0.6rem;padding:3px 10px;letter-spacing:0.08em;">Войти как админ</button>
+</footer>
+
+<script>
+const ADMIN_PWD_KEY = 'euphoria_admin_pwd';
+const SESSION_KEY = 'euphoria_admin_session';
+const DEFAULT_PWD = 'adminvlad0909_';
+
+let SHARED_URLS = {"1":"https://archive.org/download/euphoria.-s-01-e-01.1080p.-tvshows/Euphoria.S01E01.1080p.TVShows.mp4","2":"https://archive.org/download/euphoria.-s-01-e-02.1080p.-tvshows/Euphoria.S01E02.1080p.TVShows.mp4","3":"https://archive.org/download/euphoria.-s-01-e-03.1080p.-tvshows/Euphoria.S01E03.1080p.TVShows.mp4","4":"https://archive.org/download/euphoria.-s-01-e-04.1080p.-tvshows/Euphoria.S01E04.1080p.TVShows.mp4","5":"https://archive.org/download/euphoria.-s-01-e-05.1080p.-tvshows/Euphoria.S01E05.1080p.TVShows.mp4","6":"https://archive.org/download/euphoria.-s-01-e-06.1080p.-tvshows/Euphoria.S01E06.1080p.TVShows.mp4","7":"https://archive.org/download/euphoria.-s-01-e-07.1080p.-tvshows/Euphoria.S01E07.1080p.TVShows.mp4","8":"https://archive.org/download/euphoria.-s-01-e-08.1080p.-tvshows/Euphoria.S01E08.1080p.TVShows.mp4"};
+
+const EPISODES = [
+  { num: 1, title: 'Пилот' },
+  { num: 2, title: 'Весь в папочку' },
+  { num: 3, title: 'Ты выглядишь' },
+  { num: 4, title: 'Потрясённые' },
+  { num: 5, title: 'Бонни и Клайд' },
+  { num: 6, title: 'Следующая серия' },
+  { num: 7, title: 'Проблемы и трудности похода в туалет во время депрессии' },
+  { num: 8, title: 'И засей землю солью' },
+];
+
+let DB = null, currentEp = null, epData = {}, pendingUploadEp = null, isAdmin = false;
+
+function getStoredPwd() { return localStorage.getItem(ADMIN_PWD_KEY) || DEFAULT_PWD; }
+function checkPwd() {
+  const val = document.getElementById('pwd-input').value;
+  if (val === getStoredPwd()) {
+    sessionStorage.setItem(SESSION_KEY, '1');
+    closeAdminModal(); enterAdminMode();
+  } else {
+    document.getElementById('pwd-error').classList.add('show');
+    document.getElementById('pwd-input').value = '';
+    document.getElementById('pwd-input').focus();
+  }
+}
+function changePassword() {
+  const np = prompt('Введите новый пароль (мин. 4 символа):');
+  if (!np || np.length < 4) { toast('Пароль слишком короткий', 'error'); return; }
+  const np2 = prompt('Повторите новый пароль:');
+  if (np !== np2) { toast('Пароли не совпадают', 'error'); return; }
+  localStorage.setItem(ADMIN_PWD_KEY, np);
+  toast('✓ Пароль успешно изменён', 'success');
+}
+function openAdminModal() {
+  document.getElementById('admin-modal').classList.add('open');
+  setTimeout(() => document.getElementById('pwd-input').focus(), 100);
+}
+function closeAdminModal() {
+  document.getElementById('admin-modal').classList.remove('open');
+  document.getElementById('pwd-input').value = '';
+  document.getElementById('pwd-error').classList.remove('show');
+}
+document.getElementById('admin-modal').addEventListener('click', function(e) { if (e.target === this) closeAdminModal(); });
+function toggleAdmin() { if (isAdmin) exitAdminMode(); else openAdminModal(); }
+function enterAdminMode() {
+  isAdmin = true; document.body.classList.add('admin-mode');
+  document.getElementById('admin-btn').textContent = 'Выйти из режима админа';
+  document.getElementById('admin-btn').classList.add('active');
+  document.getElementById('admin-status-label').style.display = 'inline';
+  buildGrid(); toast('✓ Вы вошли как администратор', 'success');
+}
+function exitAdminMode() {
+  isAdmin = false; sessionStorage.removeItem(SESSION_KEY);
+  document.body.classList.remove('admin-mode');
+  document.getElementById('admin-btn').textContent = 'Войти как админ';
+  document.getElementById('admin-btn').classList.remove('active');
+  document.getElementById('admin-status-label').style.display = 'none';
+  buildGrid(); toast('Вы вышли из режима администратора');
+}
+
+function openDB() {
+  return new Promise((res, rej) => {
+    const req = indexedDB.open('euphoria_videos', 1);
+    req.onupgradeneeded = e => e.target.result.createObjectStore('videos', { keyPath: 'ep' });
+    req.onsuccess = e => res(e.target.result); req.onerror = e => rej(e);
+  });
+}
+function dbPut(ep, obj) {
+  return new Promise((res, rej) => {
+    const tx = DB.transaction('videos', 'readwrite');
+    tx.objectStore('videos').put({ ep, ...obj });
+    tx.oncomplete = res; tx.onerror = rej;
+  });
+}
+function dbDelete(ep) {
+  return new Promise((res, rej) => {
+    const tx = DB.transaction('videos', 'readwrite');
+    tx.objectStore('videos').delete(ep);
+    tx.oncomplete = res; tx.onerror = rej;
+  });
+}
+function dbGetAll() {
+  return new Promise((res, rej) => {
+    const tx = DB.transaction('videos', 'readonly');
+    const req = tx.objectStore('videos').getAll();
+    req.onsuccess = e => res(e.target.result); req.onerror = rej;
+  });
+}
+
+function toast(msg, type='') {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = 'show ' + type;
+  clearTimeout(window._tt);
+  window._tt = setTimeout(() => el.className = '', 3500);
+}
+
+function mergeEpData(localItems) {
+  epData = {};
+  for (const [ep, url] of Object.entries(SHARED_URLS)) {
+    epData[parseInt(ep)] = { type: 'url', url, name: `Серия ${ep} (общий URL)`, shared: true };
+  }
+  for (const item of localItems) {
+    epData[item.ep] = { type: item.type, blob: item.blob, url: item.url, name: item.name, shared: false };
+  }
+}
+
+function epLabel(ep) {
+  return ep.title ? ep.title : `Серия ${ep.num}`;
+}
+
+function buildGrid() {
+  const grid = document.getElementById('episodes-grid');
+  const sel = document.getElementById('ep-select');
+  grid.innerHTML = ''; sel.innerHTML = '<option value="">— Серия —</option>';
+
+  EPISODES.forEach(ep => {
+    const data = epData[ep.num];
+    const hasVideo = !!data;
+    const isShared = data && data.shared;
+    const card = document.createElement('div');
+    card.className = 'episode-card' + (currentEp === ep.num ? ' active' : '');
+    card.id = `card-${ep.num}`;
+    const adminBtns = isAdmin ? `
+      <button class="ep-upload-btn" onclick="triggerUpload(${ep.num},event)">${hasVideo ? '↑ Заменить файл' : '↑ Загрузить файл'}</button>
+      ${hasVideo && !isShared ? `<button class="ep-upload-btn" style="color:var(--green3);border-color:rgba(219,39,119,0.3);" onclick="deleteEp(${ep.num},event)">✕ Удалить серию</button>` : ''}
+    ` : '';
+    const sharedBadge = isShared ? `<span style="font-size:0.6rem;color:var(--pink3);letter-spacing:0.05em;">🌐 общий</span>` : '';
+    card.innerHTML = `
+      <div class="ep-thumb">
+        <div class="ep-number-bg">${String(ep.num).padStart(2,'0')}</div>
+        <div class="play-overlay"><div class="play-overlay-icon">▶</div></div>
+      </div>
+      <div class="ep-info">
+        <div class="ep-num" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>S01 · E${String(ep.num).padStart(2,'0')}</span>${sharedBadge}
+        </div>
+        <div class="ep-title">${epLabel(ep)}</div>
+        <div class="ep-status ${hasVideo?'uploaded':'empty'}">${hasVideo ? '● Доступно для просмотра' : '○ Нет видео'}</div>
+        ${adminBtns}
+      </div>`;
+    if (hasVideo) {
+      card.addEventListener('click', e => { if (e.target.tagName === 'BUTTON') return; playEpisode(ep.num); });
+    } else if (!isAdmin) { card.style.opacity = '0.5'; card.style.cursor = 'default'; }
+    grid.appendChild(card);
+    const opt = document.createElement('option');
+    opt.value = ep.num;
+    opt.textContent = `E${String(ep.num).padStart(2,'0')} — ${epLabel(ep)}`;
+    sel.appendChild(opt);
+  });
+  updateBadge(); updateStorage();
+}
+
+function updateBadge() {
+  const count = Object.keys(epData).length;
+  document.getElementById('ep-count-badge').textContent = `${count} / 8 серий`;
+}
+
+async function playEpisode(num) {
+  currentEp = num;
+  const data = epData[num]; if (!data) return;
+  document.querySelectorAll('.episode-card').forEach(c => c.classList.remove('active'));
+  const card = document.getElementById(`card-${num}`);
+  if (card) card.classList.add('active');
+  const video = document.getElementById('main-video');
+  const placeholder = document.getElementById('player-placeholder');
+  video.style.display = 'block'; placeholder.style.display = 'none';
+  if (data.type === 'blob') { video.src = URL.createObjectURL(data.blob); } else { video.src = data.url; }
+  video.play();
+  const ep = EPISODES.find(e => e.num === num);
+  document.getElementById('now-playing').textContent = `S01 · E${String(num).padStart(2,'0')} — ${ep ? epLabel(ep) : 'Эйфория'}`;
+}
+
+function changeEp(dir) {
+  if (currentEp === null) { currentEp = 1; }
+  const next = currentEp + dir;
+  if (next < 1 || next > 8) return;
+  if (epData[next]) playEpisode(next);
+  else { currentEp = next; toast(`Серия ${next} не загружена`, 'error'); }
+}
+
+function triggerUpload(epNum, e) {
+  e.stopPropagation(); pendingUploadEp = epNum;
+  document.getElementById('file-input').click();
+}
+
+document.getElementById('file-input').addEventListener('change', async e => {
+  const file = e.target.files[0];
+  if (!file || pendingUploadEp === null) return;
+  const epNum = pendingUploadEp; pendingUploadEp = null; e.target.value = '';
+  const prog = document.getElementById('upload-progress');
+  const fill = document.getElementById('progress-fill');
+  const label = document.getElementById('upload-label');
+  prog.style.display = 'block';
+  label.textContent = `Сохранение серии ${epNum} (${(file.size/1024/1024).toFixed(1)} МБ)...`;
+  fill.style.width = '0%';
+  try {
+    let p = 0;
+    const iv = setInterval(() => { p = Math.min(p+4,85); fill.style.width=p+'%'; }, 80);
+    await dbPut(epNum, { type:'blob', blob:file, name:file.name });
+    clearInterval(iv); fill.style.width = '100%';
+    epData[epNum] = { type:'blob', blob:file, name:file.name, shared:false };
+    setTimeout(() => prog.style.display='none', 800);
+    toast(`✓ Серия ${epNum} сохранена (${(file.size/1024/1024).toFixed(1)} МБ) — только локально`, 'success');
+    buildGrid();
+  } catch(err) { prog.style.display = 'none'; toast('Ошибка: ' + err.message, 'error'); }
+});
+
+async function deleteEp(num, e) {
+  e.stopPropagation();
+  if (!confirm(`Удалить серию ${num}?`)) return;
+  await dbDelete(num); delete epData[num];
+  if (currentEp === num) {
+    currentEp = null;
+    document.getElementById('main-video').style.display = 'none';
+    document.getElementById('player-placeholder').style.display = '';
+    document.getElementById('now-playing').textContent = '— Выберите серию —';
+  }
+  buildGrid(); toast(`Серия ${num} удалена`);
+}
+
+async function saveUrl() {
+  const epNum = parseInt(document.getElementById('ep-select').value);
+  const url = document.getElementById('url-input').value.trim();
+  if (!epNum || !url) { toast('Выберите серию и введите URL', 'error'); return; }
+  SHARED_URLS[epNum] = url;
+  epData[epNum] = { type:'url', url, name:`Серия ${epNum} (общий URL)`, shared:true };
+  document.getElementById('url-input').value = '';
+  buildGrid(); toast(`✓ URL серии ${epNum} сохранён. Скачайте обновлённую с��раницу!`, 'success');
+}
+
+async function fetchAsDataURL(url) {
+  const res = await fetch(url);
+  const blob = await res.blob();
+  return await new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(r.result);
+    r.onerror = reject;
+    r.readAsDataURL(blob);
+  });
+}
+
+async function exportPageWithUrls() {
+  try {
+    // Inline the background poster and logo as base64 so they survive offline.
+    const [bgData, logoData] = await Promise.all([
+      fetchAsDataURL('/euphoria-bg.jpg').catch(() => null),
+      fetchAsDataURL('/euphoria-logo.png').catch(() => null),
+    ]);
+
+    // Clone the live DOM so we don't disturb the page the user is viewing.
+    const docClone = document.documentElement.cloneNode(true);
+
+    // Swap absolute image paths for the inlined data URLs.
+    if (bgData) {
+      docClone.querySelectorAll('img.hero-bg-img').forEach(img => img.setAttribute('src', bgData));
+    }
+    if (logoData) {
+      docClone.querySelectorAll('img.brand-logo').forEach(img => img.setAttribute('src', logoData));
+    }
+
+    let pageHtml = docClone.outerHTML;
+    // Persist any shared URLs into the exported source.
+    pageHtml = pageHtml.replace(/let SHARED_URLS = \{.*?\};/s, `let SHARED_URLS = ${JSON.stringify(SHARED_URLS)};`);
+
+    // Prepend the DOCTYPE so the file renders in standards mode when opened.
+    const finalHtml = '<!DOCTYPE html>\n' + pageHtml;
+
+    const blob = new Blob([finalHtml], { type: 'text/html;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'euphoria-s1.html';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    toast('✓ Файл скачан — изображения встроены, открывается офлайн', 'success');
+  } catch (e) {
+    toast('Ошибка при скачивании страницы', 'error');
+  }
+}
+
+async function clearAll() {
+  if (!confirm('Удалить все локальные видео?')) return;
+  const all = await dbGetAll();
+  for (const item of all) await dbDelete(item.ep);
+  mergeEpData([]); currentEp = null;
+  document.getElementById('main-video').style.display = 'none';
+  document.getElementById('player-placeholder').style.display = '';
+  document.getElementById('now-playing').textContent = '— Выберите серию —';
+  buildGrid(); toast('Локальные файлы очищены');
+}
+
+function exportLinks() {
+  const lines = Object.entries(epData).map(([n,d]) => `Серия ${n}: ${d.type==='url' ? d.url : '[локальный файл: '+d.name+']' }`);
+  if (!lines.length) { toast('Нет серий', 'error'); return; }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([lines.join('\n')], {type:'text/plain'}));
+  a.download = 'euphoria_s1_links.txt'; a.click();
+}
+
+async function updateStorage() {
+  try {
+    if ('storage' in navigator && 'estimate' in navigator.storage) {
+      const { usage, quota } = await navigator.storage.estimate();
+      document.getElementById('storage-size').textContent = `${(usage/1024/1024).toFixed(1)} МБ / ~${(quota/1024/1024/1024).toFixed(1)} ГБ`;
+      document.getElementById('storage-fill').style.width = Math.min((usage/quota)*100, 100) + '%';
+    }
+  } catch(e) {}
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(document.getElementById('share-link').value).then(() => toast('Ссылка скопирована!', 'success'));
+}
+
+document.getElementById('share-link').value = window.location.href;
+
+async function init() {
+  DB = await openDB();
+  const all = await dbGetAll();
+  mergeEpData(all);
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    isAdmin = true; document.body.classList.add('admin-mode');
+    document.getElementById('admin-btn').textContent = 'Выйти из режима админа';
+    document.getElementById('admin-btn').classList.add('active');
+    document.getElementById('admin-status-label').style.display = 'inline';
+  }
+  buildGrid();
+  const hash = window.location.hash;
+  if (hash.startsWith('#ep')) {
+    const num = parseInt(hash.slice(3));
+    if (epData[num]) setTimeout(() => playEpisode(num), 300);
+  }
+}
+
+init().catch(e => console.error(e));
+</script>
+
+</div>
+</body></html>
